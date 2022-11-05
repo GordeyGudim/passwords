@@ -1,6 +1,9 @@
 import json
 from generate_password import generate_password 
+import subprocess
+subprocess.run('sudo chmod u+r user.json', shell=True)
 #n = generate_password.generate_password()
+
 def count_start():
     with open('user.json', 'r') as usp:
         dict1 = json.load(usp)
@@ -77,3 +80,4 @@ elif user_input == '2':
 elif user_input == '3':
     creat_user()
 
+subprocess.run('sudo chmod u-r user.json', shell = True)
